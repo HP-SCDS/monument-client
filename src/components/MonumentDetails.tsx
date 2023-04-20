@@ -25,13 +25,15 @@ function MonumentDetails(props: MonumentDetailsProps) {
             <Card sx={{ maxWidth: 800 }}>
                 <CardContent>
                     <Typography variant="h4">{monument.nombre}</Typography>
+                    <Typography variant="h6">{monument.tipoMonumento} ({monument.clasificacion})</Typography>
+                    <Typography variant="caption">{monument.periodosHistoricos.join(", ")}</Typography>
                     <Typography marginTop={5}>{monument.descripcion}</Typography>
                 </CardContent>
                 {monument.hasImage && <CardActions>
                     <Button size="small" onClick={onImageLinkClick}>Ver imagen</Button>
                 </CardActions>}
             </Card>
-            <MonumentImageDialog isOpen={imageOpen} onClose={onClose} monument={monument} />
+            {monument.hasImage && <MonumentImageDialog isOpen={imageOpen} onClose={onClose} monument={monument} />}
         </Box>
     );
 }
