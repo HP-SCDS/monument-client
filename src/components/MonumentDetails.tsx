@@ -1,0 +1,39 @@
+import { Box, Button, Card, CardActions, CardContent, Typography } from "@mui/material";
+import { Monument } from "../types/Monument";
+import { useState } from "react";
+import MonumentImageDialog from "./MonumentImageDialog";
+
+type MonumentDetailsProps = {
+    monument: Monument;
+};
+
+function MonumentDetails(props: MonumentDetailsProps) {
+    const { monument } = props;
+
+    const [imageOpen, setImageOpen] = useState(false);
+
+    function onImageLinkClick() {
+        setImageOpen(true);
+    }
+
+    function onClose() {
+        setImageOpen(false);
+    }
+
+    return (
+        <Box key={monument.id} m={2} display="flex" justifyContent="center" alignItems="center">
+            <Card sx={{ maxWidth: 800 }}>
+                <CardContent>
+                    <Typography variant="h4">{monument.nombre}</Typography>
+                    <Typography marginTop={5}>{monument.descripcion}</Typography>
+                </CardContent>
+                {monument.hasImage && <CardActions>
+                    <Button size="small" onClick={onImageLinkClick}>Ver imagen</Button>
+                </CardActions>}
+            </Card>
+            <MonumentImageDialog isOpen={imageOpen} onClose={onClose} monument={monument} />
+        </Box>
+    );
+}
+
+export default MonumentDetails;

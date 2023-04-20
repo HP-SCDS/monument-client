@@ -1,0 +1,2 @@
+export const SALAMANCA_MONUMENTS_URL = 'https://monumentservice.azurewebsites.net/monuments/localidad/Salamanca';
+export const IMAGE_URL_GETTER = (id: number): string => `https://monumentservice.azurewebsites.net/monuments/${id}/image`;
