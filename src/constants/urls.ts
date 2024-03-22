@@ -1,2 +1,2 @@
-export const SALAMANCA_MONUMENTS_URL = 'https://monumentservice.azurewebsites.net/monuments/localidad/Salamanca';
-export const IMAGE_URL_GETTER = (id: number): string => `https://monumentservice.azurewebsites.net/monuments/${id}/image`;
+export const SALAMANCA_MONUMENTS_URL = 'https://monumentservice-app-202403221221.nicewave-2d3a8178.westeurope.azurecontainerapps.io/monuments/localidad/Salamanca';
+export const IMAGE_URL_GETTER = (id: number): string => `https://monumentservice-app-202403221221.nicewave-2d3a8178.westeurope.azurecontainerapps.io/monuments/${id}/image`;
